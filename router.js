@@ -9,8 +9,8 @@ export function createRouter(ssrContext, createDefaultRouter, routerOptions) {
     const req = ssrContext.req
 
     const domainLevel = (req.headers.host.match(/\./g) || []).length + 1
-    console.log(domainLevel)
-    console.log(req.headers.host)
+    console.error(domainLevel)
+    console.error(req.headers.host)
     // Get routes directory by hostname
     routesDirectory = domainLevel > 1 ? 'subdomain' : '/'
     // Save to the object that will be sent to the client as inline-script
